@@ -57,7 +57,7 @@ void		screen_shot(t_data *data)
 
 	info = g_data.w;
 	file_size = 14 + 40 * (g_data.w * g_data.h) * 4;
-	fd = open("screenshot.bmp", O_CREAT | O_RDWR | S_IRWXU);
+	fd = open("screenshot.bmp", O_RDWR | O_CREAT, S_IRWXU);
 	file_header(fd, file_size, info);
 	write_info(fd, data);
 	close(fd);

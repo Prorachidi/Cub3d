@@ -117,10 +117,9 @@ void	error_three(void)
 			while (g_data.map[i][a] == 32)
 				a++;
 		}
-		if (g_data.map[i][a] != '1')
+		if (g_data.map[i][a] != '1' &&
+		g_data.map[i][a] != ' ' && g_data.map[i][a] != '\0')
 		{
-			if (g_data.map[i][a] == '\0')
-				error_msg();
 			printf("Error\nFirst Col doesn't start with 1");
 			exit(-1);
 		}

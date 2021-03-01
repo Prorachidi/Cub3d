@@ -284,6 +284,7 @@ float						distancebetweenpoints(float x1, float y1,
 							float x2, float y2);
 void						ft_ray_cast(t_data *data);
 int							read_file(void);
+int							close_x(void);
 void						ft_resolution(char **tab, int i1);
 void						init_texture(t_data *data);
 void						ft_update(t_data *data);

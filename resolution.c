@@ -52,12 +52,14 @@ void	ft(char **tab, int ab)
 
 	t = ft_split(tab[ab], ' ');
 	len = check_len(t);
-	array_free(t);
 	if (len != 3)
 	{
 		printf("error\nin resolutionn\n");
 		exit(1);
 	}
+	g_data.w = ft_atoi_res(t[1]);
+	g_data.h = ft_atoi_res(t[2]);
+	array_free(t);
 }
 
 void	tet(char *r_one, char *r_two)
@@ -70,28 +72,6 @@ void	tet(char *r_one, char *r_two)
 
 void	ft_resolution(char **tab, int i1)
 {
-	int		i;
-	int		a;
-	int		b;
-	char	*r_one;
-	char	*r_two;
-
 	ft(tab, i1);
 	resolution_error(tab, i1);
-	i = 1;
-	a = 0;
-	while (tab[i1][i] == ' ')
-		i++;
-	b = i;
-	while (tab[i1][b] != ' ')
-	{
-		b++;
-		a++;
-	}
-	r_one = ft_substr(tab[i1], i, a);
-	while (tab[i1][i++] != '\0')
-		a++;
-	a -= b;
-	r_two = ft_substr(tab[i1], b, a);
-	tet(r_one, r_two);
 }

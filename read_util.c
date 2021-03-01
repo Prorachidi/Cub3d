@@ -25,6 +25,8 @@ void	read_map_util(char **tab)
 	i = 0;
 	while (tab[a] != NULL)
 	{
+		if (tab[a][0] == '\0')
+			error_msg();
 		while (tab[a][i] != '\0')
 		{
 			g_data.map[b][i] = tab[a][i];
@@ -86,7 +88,7 @@ void	check_cub_y(char **tab, int i)
 		while (tab[i][c] == ' ')
 		{
 			c++;
-			if (tab[i][c] == '1')
+			if (tab[i][c] == '1' || tab[i][c] == ' ')
 				j = array_map(tab, i, j);
 			if (tab[i][c] != '1' && tab[i][c] != ' ')
 			{
@@ -94,7 +96,7 @@ void	check_cub_y(char **tab, int i)
 				break ;
 			}
 		}
-		if (tab[i][c] == '1')
+		if (tab[i][c] == '1' || tab[i][c] == ' ')
 			j = array_map(tab, i, j);
 		i++;
 	}

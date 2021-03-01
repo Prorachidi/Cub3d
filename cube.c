@@ -103,13 +103,14 @@ int		main(int argc, char **argv)
 		if (argc == 3)
 			utile(&data);
 		if (g_ply.saved == 0)
+		{
+			mlx_hook(data.mlx_win, 17, 0, close_x, &data);
 			mlx_hook(data.mlx_win, KEY_PRESS, 0, ft_key_press, &data);
+		}
 		mlx_loop(data.mlx);
 		main_util(&data);
 		if (argc == 3)
 			utile(&data);
-		if (g_ply.saved == 0)
-			mlx_hook(data.mlx_win, KEY_PRESS, 0, ft_key_press, &data);
 		mlx_loop(data.mlx);
 	}
 	else

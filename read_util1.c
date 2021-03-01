@@ -14,6 +14,12 @@
 #include "./get_next_line/get_next_line.h"
 #include "./libft/libft.h"
 
+int			close_x(void)
+{
+	exit(0);
+	return (0);
+}
+
 static	int	tester(char const s1, const char *set)
 {
 	int		i;
